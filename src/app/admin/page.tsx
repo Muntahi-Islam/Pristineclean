@@ -24,7 +24,7 @@ interface DashboardData {
   }>;
 }
 
-const PIE_COLORS = ["#2563eb", "#f59e0b", "#10b981", "#6b7280"];
+const PIE_COLORS = ["#c25a7f", "#f2b3cc", "#853d57", "#f9d5e3"];
 
 export default function AdminDashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -87,10 +87,10 @@ export default function AdminDashboard() {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {[
-          { label: "Total Quotes", value: data?.totalQuotes ?? 0, icon: MessageSquare, color: "text-blue-600 bg-blue-100", change: "+12%", changeUp: true },
-          { label: "Pending", value: data?.pendingQuotes ?? 0, icon: Clock, color: "text-amber-600 bg-amber-100", change: `${data?.pendingQuotes ?? 0} need review`, changeUp: false },
-          { label: "Customers", value: data?.totalCustomers ?? 0, icon: Users, color: "text-emerald-600 bg-emerald-100", change: "+5 new", changeUp: true },
-          { label: "Revenue", value: `$${(data?.totalQuotes ?? 0) * 85}`, icon: DollarSign, color: "text-purple-600 bg-purple-100", change: "+18%", changeUp: true },
+          { label: "Total Quotes", value: data?.totalQuotes ?? 0, icon: MessageSquare, color: "text-navy-600 bg-navy-100", change: "+12%", changeUp: true },
+          { label: "Pending", value: data?.pendingQuotes ?? 0, icon: Clock, color: "text-navy-500 bg-navy-100", change: `${data?.pendingQuotes ?? 0} need review`, changeUp: false },
+          { label: "Customers", value: data?.totalCustomers ?? 0, icon: Users, color: "text-navy-700 bg-navy-100", change: "+5 new", changeUp: true },
+          { label: "Revenue", value: `$${(data?.totalQuotes ?? 0) * 85}`, icon: DollarSign, color: "text-navy-800 bg-navy-100", change: "+18%", changeUp: true },
         ].map((stat, i) => {
           const Icon = stat.icon;
           return (
@@ -103,7 +103,7 @@ export default function AdminDashboard() {
                 <div className={`p-2.5 rounded-full ${stat.color}`}>
                   <Icon size={20} />
                 </div>
-                <span className={`text-xs font-medium ${stat.changeUp ? "text-emerald-600" : "text-amber-600"}`}>
+                <span className={`text-xs font-medium ${stat.changeUp ? "text-navy-600" : "text-navy-500"}`}>
                   {stat.change}
                 </span>
               </div>
@@ -124,14 +124,14 @@ export default function AdminDashboard() {
           </div>
           <ResponsiveContainer width="100%" height={240}>
             <BarChart data={chartData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-              <XAxis dataKey="name" tick={{ fontSize: 12, fill: "#64748b" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 12, fill: "#64748b" }} axisLine={false} tickLine={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#f9d5e3" />
+              <XAxis dataKey="name" tick={{ fontSize: 12, fill: "#853d57" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 12, fill: "#853d57" }} axisLine={false} tickLine={false} />
               <Tooltip
-                contentStyle={{ borderRadius: 0, border: "2px solid #e2e8f0", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
+                contentStyle={{ borderRadius: 0, border: "2px solid #f9d5e3", boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)" }}
               />
-              <Bar dataKey="quotes" fill="#2563eb" radius={[2, 2, 0, 0]} />
-              <Bar dataKey="customers" fill="#94a3b8" radius={[2, 2, 0, 0]} />
+              <Bar dataKey="quotes" fill="#c25a7f" radius={[2, 2, 0, 0]} />
+              <Bar dataKey="customers" fill="#f2b3cc" radius={[2, 2, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -158,7 +158,7 @@ export default function AdminDashboard() {
                 ))}
               </Pie>
               <Tooltip
-                contentStyle={{ borderRadius: 0, border: "2px solid #e2e8f0" }}
+                contentStyle={{ borderRadius: 0, border: "2px solid #f9d5e3" }}
               />
             </PieChart>
           </ResponsiveContainer>
@@ -177,7 +177,7 @@ export default function AdminDashboard() {
       <div className="bg-white border-2 border-navy-100 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-400">
         <div className="p-6 border-b-2 border-navy-100 flex items-center justify-between">
           <h2 className="text-lg font-semibold text-navy-900">Recent Quote Requests</h2>
-          <Link href="/admin/quotes" className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors">
+          <Link href="/admin/quotes" className="text-sm text-navy-600 hover:text-navy-700 font-medium transition-colors">
             View all →
           </Link>
         </div>
@@ -223,7 +223,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500">
         <Link href="/admin/quotes" className="bg-white border-2 border-navy-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-full bg-blue-100 text-blue-600 group-hover:scale-110 transition-transform">
+            <div className="p-2.5 rounded-full bg-navy-100 text-navy-600 group-hover:scale-110 transition-transform">
               <MessageSquare size={20} />
             </div>
             <div>
@@ -234,7 +234,7 @@ export default function AdminDashboard() {
         </Link>
         <Link href="/admin/invoices" className="bg-white border-2 border-navy-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-full bg-emerald-100 text-emerald-600 group-hover:scale-110 transition-transform">
+            <div className="p-2.5 rounded-full bg-navy-100 text-navy-700 group-hover:scale-110 transition-transform">
               <FileSpreadsheet size={20} />
             </div>
             <div>
@@ -245,7 +245,7 @@ export default function AdminDashboard() {
         </Link>
         <Link href="/admin/blog" className="bg-white border-2 border-navy-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-full bg-purple-100 text-purple-600 group-hover:scale-110 transition-transform">
+            <div className="p-2.5 rounded-full bg-navy-100 text-navy-600 group-hover:scale-110 transition-transform">
               <Activity size={20} />
             </div>
             <div>

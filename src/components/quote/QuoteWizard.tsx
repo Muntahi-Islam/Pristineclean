@@ -103,7 +103,7 @@ export function QuoteWizard() {
                 disabled={i > step}
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-all ${
                   i < step
-                    ? "bg-blue-600 text-white"
+                    ? "bg-navy-600 text-white"
                     : i === step
                     ? "bg-navy-900 text-white"
                     : "bg-navy-200 text-navy-500"
@@ -114,7 +114,7 @@ export function QuoteWizard() {
               {i < totalSteps - 1 && (
                 <div
                   className={`w-8 md:w-16 h-0.5 mx-1 transition-colors ${
-                    i < step ? "bg-blue-600" : "bg-navy-200"
+                    i < step ? "bg-navy-600" : "bg-navy-200"
                   }`}
                 />
               )}
@@ -175,7 +175,7 @@ export function QuoteWizard() {
           <button
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className="px-8 py-3 bg-blue-600 text-white text-sm font-medium transition-all hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-8 py-3 bg-navy-600 text-white text-sm font-medium transition-all hover:bg-navy-500 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Submitting..." : "Submit Quote Request"}
           </button>

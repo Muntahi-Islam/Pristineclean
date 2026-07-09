@@ -78,21 +78,21 @@ export default function AdminGallery() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Title</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Category</label>
-              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
+              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
                 {CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Image URL</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Description</label>
-              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y" rows={2} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
+              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y" rows={2} value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
             </div>
             <div className="flex items-center gap-2">
               <input type="checkbox" id="g-featured" checked={form.featured} onChange={(e) => setForm({ ...form, featured: e.target.checked })} className="w-4 h-4" />
@@ -141,7 +141,7 @@ export default function AdminGallery() {
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-1">
-                      <button onClick={() => openEdit(item)} className="p-1.5 text-navy-400 hover:text-blue-600 transition-colors"><Pencil size={14} /></button>
+                      <button onClick={() => openEdit(item)} className="p-1.5 text-navy-400 hover:text-navy-600 transition-colors"><Pencil size={14} /></button>
                       <button onClick={() => handleDelete(item.id)} className="p-1.5 text-navy-400 hover:text-red-600 transition-colors"><Trash2 size={14} /></button>
                     </div>
                   </td>

@@ -7,6 +7,7 @@ import { ArrowLeft, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatCurrency, formatDate } from "@/lib/utils";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import { COMPANY } from "@/lib/constants";
 
 interface InvoiceData {
   invoiceNumber: string;
@@ -56,7 +57,7 @@ export default function InvoiceDetail() {
   return (
     <div>
       <div className="flex items-center justify-between mb-8 no-print">
-        <Link href="/admin/invoices" className="flex items-center gap-2 text-sm text-navy-500 hover:text-blue-600 transition-colors">
+        <Link href="/admin/invoices" className="flex items-center gap-2 text-sm text-navy-500 hover:text-navy-600 transition-colors">
           <ArrowLeft size={16} />
           Back to Invoices
         </Link>
@@ -70,8 +71,8 @@ export default function InvoiceDetail() {
         <div className="flex justify-between items-start mb-10">
           <div>
             <h1 className="text-2xl font-bold text-navy-900">
-              <span className="font-serif">Pristine</span>
-              <span className="text-blue-600">Clean</span>
+              <span className="font-serif">{COMPANY.name.split(" ")[0]}</span>
+              <span className="text-navy-600"> {COMPANY.name.split(" ").slice(1).join(" ")}</span>
             </h1>
             {s.address && <p className="text-sm text-navy-500 mt-1">{s.address}</p>}
             {s.phone && <p className="text-sm text-navy-500">{s.phone}</p>}
@@ -79,7 +80,7 @@ export default function InvoiceDetail() {
           </div>
           <div className="text-right">
             <h2 className="text-3xl font-bold text-navy-900">INVOICE</h2>
-            <p className="text-lg font-mono text-blue-600 mt-2">{invoice.invoiceNumber}</p>
+            <p className="text-lg font-mono text-navy-600 mt-2">{invoice.invoiceNumber}</p>
             <p className="text-sm text-navy-500 mt-1">Date: {formatDate(invoice.createdAt)}</p>
           </div>
         </div>
@@ -125,7 +126,7 @@ export default function InvoiceDetail() {
         </div>
 
         <div className="text-center text-sm text-navy-400 pt-10 border-t-2 border-navy-100">
-          <p>Thank you for choosing PristineClean!</p>
+           <p>Thank you for choosing {COMPANY.name}!</p>
           <p className="mt-1">Payment is due within 30 days. Please include invoice number with payment.</p>
         </div>
       </div>

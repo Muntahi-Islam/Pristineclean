@@ -41,6 +41,7 @@ export default function AdminLayout({
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [checking, setChecking] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
     async function checkAuth() {
@@ -48,6 +49,8 @@ export default function AdminLayout({
         const session = await authClient.getSession();
         if (!session.data && pathname !== "/admin/login") {
           router.push("/admin/login");
+        } else {
+          setAuthenticated(true);
         }
       } catch {
         router.push("/admin/login");
@@ -62,7 +65,7 @@ export default function AdminLayout({
     return <>{children}</>;
   }
 
-  if (checking) {
+  if (checking || !authenticated) {
     return (
       <div className="min-h-screen bg-navy-50 flex items-center justify-center">
         <div className="text-navy-400 text-sm">Loading...</div>
@@ -79,8 +82,8 @@ export default function AdminLayout({
       >
         <div className="h-20 flex items-center px-6 border-b border-navy-800">
           <Link href="/admin" className="text-xl font-bold">
-            <span className="font-serif">Pristine</span>
-            <span className="text-blue-400">Admin</span>
+            <span className="font-serif">Tori&apos;s</span>
+            <span className="text-navy-300">Admin</span>
           </Link>
         </div>
         <nav className="p-4 space-y-1">
@@ -94,7 +97,7 @@ export default function AdminLayout({
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-blue-600 text-white"
+                    ? "bg-navy-600 text-white"
                     : "text-warm-300 hover:bg-navy-800 hover:text-white"
                 }`}
               >
@@ -142,7 +145,7 @@ export default function AdminLayout({
           </button>
           <Link
             href="/"
-            className="text-sm text-navy-500 hover:text-blue-600 transition-colors"
+            className="text-sm text-navy-500 hover:text-navy-600 transition-colors"
           >
             View Site
           </Link>

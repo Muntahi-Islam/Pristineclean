@@ -16,7 +16,7 @@ const testimonials = [
     name: "James Chen",
     role: "Property Manager",
     content:
-      "We manage 12 luxury properties and PristineClean handles all our cleaning. Consistent quality and reliable service.",
+      "We manage multiple properties and Tori's Cleaning handles all our cleaning. Consistent quality and reliable service.",
     rating: 5,
   },
   {
@@ -46,7 +46,7 @@ export function Testimonials() {
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} size={16} className="fill-blue-600 text-blue-600" />
+                  <Star key={i} size={16} className="fill-navy-600 text-navy-600" />
                 ))}
               </div>
               <p className="text-navy-700 leading-relaxed mb-6">

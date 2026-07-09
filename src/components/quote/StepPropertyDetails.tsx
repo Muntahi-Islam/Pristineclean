@@ -28,7 +28,7 @@ export function StepPropertyDetails() {
                 min={0}
                 max={20}
                 {...register("bedrooms", { valueAsNumber: true })}
-                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
                 placeholder="e.g., 3"
               />
             </div>
@@ -42,7 +42,7 @@ export function StepPropertyDetails() {
                 max={20}
                 step={0.5}
                 {...register("bathrooms", { valueAsNumber: true })}
-                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
                 placeholder="e.g., 2"
               />
             </div>
@@ -57,7 +57,7 @@ export function StepPropertyDetails() {
             type="number"
             min={0}
             {...register("squareFootage", { valueAsNumber: true })}
-            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
             placeholder="e.g., 2000"
           />
         </div>

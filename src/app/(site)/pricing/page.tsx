@@ -5,7 +5,7 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Transparent pricing for our premium cleaning services.",
+  description: "Transparent pricing for our professional cleaning services in Houston, TX.",
 };
 
 const plans = [
@@ -53,7 +53,7 @@ export default function PricingPage() {
     <>
       <section className="relative pt-32 pb-20 bg-warm-50">
         <div className="container-main text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-600">
             Pricing
           </span>
           <h1 className="mt-4 text-4xl md:text-5xl font-semibold text-navy-900 mb-4">
@@ -74,12 +74,12 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`relative bg-white border-2 p-8 transition-all hover:shadow-xl ${
                   plan.featured
-                    ? "border-blue-600 shadow-lg"
-                    : "border-navy-100 hover:border-blue-600"
+                    ? "border-navy-600 shadow-lg"
+                    : "border-navy-100 hover:border-navy-600"
                 }`}
               >
                 {plan.featured && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-1">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-navy-600 text-white text-xs font-semibold uppercase tracking-wider px-4 py-1">
                     Most Popular
                   </div>
                 )}
@@ -95,7 +95,7 @@ export default function PricingPage() {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-sm text-navy-700">
-                      <CheckCircle size={16} className="text-blue-600 shrink-0 mt-0.5" />
+                      <CheckCircle size={16} className="text-navy-600 shrink-0 mt-0.5" />
                       {feature}
                     </li>
                   ))}

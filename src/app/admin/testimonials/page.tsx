@@ -78,27 +78,27 @@ export default function AdminTestimonials() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Name *</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Role</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.role} onChange={(e) => setForm({ ...form, role: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Company</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Avatar URL</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.avatar} onChange={(e) => setForm({ ...form, avatar: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.avatar} onChange={(e) => setForm({ ...form, avatar: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Content *</label>
-              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y" rows={3} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
+              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y" rows={3} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Rating (1-5)</label>
-              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.rating} onChange={(e) => setForm({ ...form, rating: Number(e.target.value) })}>
+              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.rating} onChange={(e) => setForm({ ...form, rating: Number(e.target.value) })}>
                 {[5, 4, 3, 2, 1].map((r) => <option key={r} value={r}>{r} stars</option>)}
               </select>
             </div>
@@ -156,7 +156,7 @@ export default function AdminTestimonials() {
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-1">
-                      <button onClick={() => openEdit(item)} className="p-1.5 text-navy-400 hover:text-blue-600 transition-colors"><Pencil size={14} /></button>
+                      <button onClick={() => openEdit(item)} className="p-1.5 text-navy-400 hover:text-navy-600 transition-colors"><Pencil size={14} /></button>
                       <button onClick={() => handleDelete(item.id)} className="p-1.5 text-navy-400 hover:text-red-600 transition-colors"><Trash2 size={14} /></button>
                     </div>
                   </td>

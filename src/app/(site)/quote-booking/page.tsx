@@ -4,7 +4,7 @@ import { QuoteWizard } from "@/components/quote/QuoteWizard";
 export const metadata: Metadata = {
   title: "Get a Quote",
   description:
-    "Request a free, no-obligation quote for our premium cleaning services.",
+    "Request a free, no-obligation quote for our professional cleaning services.",
 };
 
 export default function QuoteBookingPage() {

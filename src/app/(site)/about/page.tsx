@@ -6,7 +6,7 @@ import { ArrowRight, Shield, Heart, Leaf, Award } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about PristineClean's story, values, and commitment to premium cleaning services.",
+  description: "Learn about Tori's Cleaning Service, our story, values, and commitment to professional cleaning services in Houston, TX.",
 };
 
 const values = [
@@ -32,7 +32,7 @@ const values = [
     icon: Award,
     title: "Excellence",
     description:
-      "Meticulous training, premium equipment, and uncompromising quality standards.",
+      "Meticulous training, professional equipment, and uncompromising quality standards.",
   },
 ];
 
@@ -42,18 +42,18 @@ export default function AboutPage() {
       <section className="relative pt-32 pb-20 bg-warm-50">
         <div className="container-main">
           <div className="max-w-2xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-600">
               About Us
             </span>
             <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-navy-900 leading-tight">
               Elevating Clean to{" "}
-              <span className="text-blue-600">an Art Form</span>
+              <span className="text-navy-600">an Art Form</span>
             </h1>
             <p className="mt-6 text-lg text-navy-500 leading-relaxed">
-              PristineClean was founded with a simple mission: transform
-              cleaning from a chore into an experience. We believe that a
-              pristine environment enhances well-being, productivity, and
-              quality of life.
+              Tori&apos;s Cleaning Service was founded with a simple mission:
+              transform cleaning from a chore into an experience. We believe
+              that a spotless environment enhances well-being, productivity,
+              and quality of life.
             </p>
           </div>
         </div>
@@ -76,25 +76,25 @@ export default function AboutPage() {
                 Our Story
               </h2>
               <p className="text-navy-700 leading-relaxed mb-4">
-                What started as a small family operation has grown into one of
-                the most trusted cleaning services in the region. Our founder,
-                driven by a passion for pristine spaces, built a company
-                centered on quality, reliability, and genuine care.
+                What started as a small passion project has grown into one of
+                the most trusted cleaning services in the Houston area. Our
+                founder, Tori, built a company centered on quality,
+                reliability, and genuine care for every client.
               </p>
               <p className="text-navy-700 leading-relaxed mb-6">
-                Today, we serve hundreds of satisfied clients — from luxury
-                homes to premium commercial spaces. Every team member shares our
+                Today, we serve hundreds of satisfied clients — from cozy
+                homes to busy commercial spaces. Every team member shares our
                 commitment to excellence.
               </p>
 
               <div className="grid grid-cols-3 gap-8 py-8 border-t-2 border-navy-100">
                 {[
-                  { value: 15, suffix: "+", label: "Years" },
-                  { value: 2500, suffix: "+", label: "Clients" },
-                  { value: 50, suffix: "+", label: "Team" },
+                  { value: 5, suffix: "+", label: "Years" },
+                  { value: 500, suffix: "+", label: "Clients" },
+                  { value: 10, suffix: "+", label: "Team" },
                 ].map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-3xl font-bold text-blue-600">
+                    <div className="text-3xl font-bold text-navy-600">
                       <Counter end={stat.value} suffix={stat.suffix} />
                     </div>
                     <p className="text-sm text-navy-500 mt-1">{stat.label}</p>
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 key={value.title}
                 className="bg-white border-2 border-navy-100 p-8"
               >
-                <value.icon size={28} className="text-blue-600 mb-4" />
+                <value.icon size={28} className="text-navy-600 mb-4" />
                 <h3 className="text-lg font-semibold text-navy-900 mb-2">
                   {value.title}
                 </h3>
@@ -142,8 +142,8 @@ export default function AboutPage() {
             Ready to Experience the Difference?
           </h2>
           <p className="text-warm-300 mb-8">
-            Join our family of satisfied customers and discover what premium
-            cleaning truly means.
+            Join our family of satisfied customers and discover what
+            professional cleaning truly means.
           </p>
           <Link href="/quote-booking">
             <Button variant="white" size="lg">

@@ -13,15 +13,15 @@ const testimonials = [
   },
   {
     name: "James Chen",
-    role: "Property Manager, LuxLiving Properties",
+    role: "Property Manager",
     content:
-      "We manage 12 luxury properties and PristineClean handles all our cleaning needs. Consistent quality, reliable scheduling, and outstanding results every time.",
+      "We manage multiple properties and Tori's Cleaning Service handles all our cleaning needs. Consistent quality, reliable scheduling, and outstanding results every time.",
     rating: 5,
     date: "1 month ago",
   },
   {
     name: "Emily Rodriguez",
-    role: "CEO, Rodriguez Group",
+    role: "Business Owner",
     content:
       "Our office has never looked better. The team works around our schedule, uses eco-friendly products, and the results are truly outstanding. Highly recommended.",
     rating: 5,
@@ -39,13 +39,13 @@ const testimonials = [
     name: "Lisa Park",
     role: "Real Estate Agent",
     content:
-      "I recommend PristineClean to all my clients. Their move-in/move-out cleaning is exceptional and helps my clients feel confident in their transactions.",
+      "I recommend Tori's Cleaning Service to all my clients. Their move-in/move-out cleaning is exceptional and helps my clients feel confident in their transactions.",
     rating: 5,
     date: "1 month ago",
   },
   {
     name: "David Thompson",
-    role: "Office Manager, TechHub Inc.",
+    role: "Office Manager",
     content:
       "Reliable, professional, and thorough. Our team loves coming into a freshly cleaned office. The regular service has been flawless for over a year.",
     rating: 5,
@@ -59,14 +59,14 @@ export function TestimonialsPage() {
       {testimonials.map((t) => (
         <div
           key={t.name}
-          className="bg-white border-2 border-navy-100 p-8 transition-all hover:border-blue-600 hover:shadow-lg"
+          className="bg-white border-2 border-navy-100 p-8 transition-all hover:border-navy-600 hover:shadow-lg"
         >
           <div className="flex gap-1 mb-4">
             {Array.from({ length: t.rating }).map((_, i) => (
               <Star
                 key={i}
                 size={16}
-                className="fill-blue-600 text-blue-600"
+                className="fill-navy-600 text-navy-600"
               />
             ))}
           </div>
@@ -74,7 +74,7 @@ export function TestimonialsPage() {
             &ldquo;{t.content}&rdquo;
           </p>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-navy-200 rounded-full flex items-center justify-center">
+            <div className="w-10 h-10 bg-navy-100 rounded-full flex items-center justify-center">
               <span className="text-sm font-semibold text-navy-600">
                 {t.name.charAt(0)}
               </span>

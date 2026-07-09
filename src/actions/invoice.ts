@@ -67,6 +67,47 @@ export async function generateInvoice(quoteId: string) {
   }
 }
 
+export async function createStandaloneInvoice(data: {
+  customerName: string;
+  customerEmail: string;
+  customerPhone?: string;
+  customerAddress?: string;
+  service: string;
+  amount: number;
+  tax?: number;
+  notes?: string;
+}) {
+  const count = await prisma.invoice.count();
+  const invoiceNumber = `INV-${String(count + 1).padStart(4, "0")}`;
+
+  const amount = Number(data.amount);
+  const tax = data.tax !== undefined ? Number(data.tax) : Number((amount * 0.08).toFixed(2));
+  const total = Number((amount + tax).toFixed(2));
+
+  try {
+    const invoice = await prisma.invoice.create({
+      data: {
+        invoiceNumber,
+        customerName: data.customerName,
+        customerEmail: data.customerEmail,
+        customerPhone: data.customerPhone || null,
+        customerAddress: data.customerAddress || null,
+        service: data.service,
+        amount,
+        tax,
+        total,
+        status: "PAID",
+        notes: data.notes || null,
+      },
+    });
+
+    return { success: true, invoice: serializeInvoice(invoice) };
+  } catch (error) {
+    console.error("Invoice creation error:", error);
+    return { success: false, error: "Failed to create invoice" };
+  }
+}
+
 export async function getInvoices() {
   try {
     const invoices = await prisma.invoice.findMany({

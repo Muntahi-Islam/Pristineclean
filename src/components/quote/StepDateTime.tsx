@@ -25,7 +25,7 @@ export function StepDateTime() {
           <input
             type="date"
             {...register("preferredDate")}
-            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
             min={new Date().toISOString().split("T")[0]}
           />
         </div>
@@ -40,7 +40,7 @@ export function StepDateTime() {
                 key={time}
                 className={`p-3 text-center text-sm border-2 cursor-pointer transition-all ${
                   selectedTime === time
-                    ? "border-blue-600 bg-blue-50/50 text-blue-600"
+                    ? "border-navy-600 bg-navy-50/50 text-navy-600"
                     : "border-navy-200 hover:border-navy-400 bg-white text-navy-700"
                 }`}
               >

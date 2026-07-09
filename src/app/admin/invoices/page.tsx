@@ -50,10 +50,10 @@ export default function AdminInvoices() {
             Manage and generate invoices for completed services.
           </p>
         </div>
-        <Link href="/admin/quotes">
+        <Link href="/admin/invoices/new">
           <Button variant="primary" size="sm">
             <Plus size={16} className="mr-2" />
-            New from Quote
+            New Invoice
           </Button>
         </Link>
       </div>
@@ -95,7 +95,7 @@ export default function AdminInvoices() {
                     size={32}
                     className="mx-auto mb-2 text-navy-300"
                   />
-                  No invoices yet. Generate one from a quote.
+                  No invoices yet. Create one from a quote or standalone.
                 </td>
               </tr>
             ) : (
@@ -134,7 +134,7 @@ export default function AdminInvoices() {
                   <td className="p-4">
                     <Link
                       href={`/admin/invoices/${inv.id}`}
-                      className="flex items-center gap-1 text-blue-600 hover:text-blue-700 text-xs font-medium"
+                      className="flex items-center gap-1 text-navy-600 hover:text-navy-700 text-xs font-medium"
                     >
                       <Download size={14} />
                       View PDF

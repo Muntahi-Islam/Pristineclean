@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "PristineClean terms of service.",
+  description: "Tori's Cleaning Service terms of service.",
 };
 
 export default function TermsPage() {
@@ -18,7 +18,7 @@ export default function TermsPage() {
             1. Services
           </h2>
           <p>
-            PristineClean provides professional cleaning services for
+            Tori's Cleaning Service provides professional cleaning services for
             residential and commercial properties. All services are subject to
             availability and agreed-upon scope of work.
           </p>
@@ -50,7 +50,7 @@ export default function TermsPage() {
             5. Liability
           </h2>
           <p>
-            PristineClean is fully insured and bonded. Our liability is limited
+            Tori's Cleaning Service is fully insured and bonded. Our liability is limited
             to the value of the service provided. Claims must be reported within
             24 hours of service completion.
           </p>
@@ -59,7 +59,7 @@ export default function TermsPage() {
           </h2>
           <p>
             For questions about these terms, please contact us at
-            hello@pristineclean.com.
+            toriscleaningservice@gmail.com.
           </p>
         </div>
       </div>

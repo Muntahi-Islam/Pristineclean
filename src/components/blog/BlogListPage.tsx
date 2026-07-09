@@ -13,7 +13,7 @@ const posts = [
     image:
       "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80",
     category: "Tips",
-    author: "PristineClean Team",
+    author: "Tori's Cleaning Team",
     readingTime: 5,
     createdAt: new Date("2026-06-15"),
   },
@@ -25,19 +25,19 @@ const posts = [
     image:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80",
     category: "Eco",
-    author: "Sarah Mitchell",
+    author: "Tori's Cleaning Team",
     readingTime: 4,
     createdAt: new Date("2026-05-28"),
   },
   {
     slug: "office-cleaning-guide",
-    title: "How to Maintain a Pristine Office Environment",
+    title: "How to Maintain a Spotless Office Environment",
     excerpt:
       "A clean office boosts productivity and makes a great impression. Learn our professional strategies.",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80",
     category: "Commercial",
-    author: "James Chen",
+    author: "Tori's Cleaning Team",
     readingTime: 6,
     createdAt: new Date("2026-05-10"),
   },
@@ -49,7 +49,7 @@ const posts = [
     image:
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
     category: "Tips",
-    author: "PristineClean Team",
+    author: "Tori's Cleaning Team",
     readingTime: 4,
     createdAt: new Date("2026-04-22"),
   },
@@ -61,7 +61,7 @@ const posts = [
     image:
       "https://images.unsplash.com/photo-1600566753086-00f18f6bff2e?w=600&q=80",
     category: "Moving",
-    author: "Emily Rodriguez",
+    author: "Tori's Cleaning Team",
     readingTime: 7,
     createdAt: new Date("2026-04-05"),
   },
@@ -73,7 +73,7 @@ const posts = [
     image:
       "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=80",
     category: "Deep Clean",
-    author: "PristineClean Team",
+    author: "Tori's Cleaning Team",
     readingTime: 6,
     createdAt: new Date("2026-03-18"),
   },
@@ -86,7 +86,7 @@ export function BlogListPage() {
         <Link
           key={post.slug}
           href={`/blog/${post.slug}`}
-          className="group bg-white border-2 border-navy-100 overflow-hidden transition-all duration-300 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1"
+          className="group bg-white border-2 border-navy-100 overflow-hidden transition-all duration-300 hover:border-navy-600 hover:shadow-xl hover:-translate-y-1"
         >
           <div className="aspect-[16/10] overflow-hidden">
             <div
@@ -96,11 +96,11 @@ export function BlogListPage() {
           </div>
           <div className="p-6">
             <div className="flex items-center gap-3 text-xs text-navy-400 mb-3">
-              <span className="font-medium text-blue-600 uppercase tracking-wider">
+              <span className="font-medium text-navy-600 uppercase tracking-wider">
                 {post.category}
               </span>
             </div>
-            <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-navy-600 transition-colors">
               {post.title}
             </h3>
             <p className="text-sm text-navy-500 leading-relaxed line-clamp-2 mb-4">

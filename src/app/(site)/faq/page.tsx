@@ -3,7 +3,7 @@ import { FAQPage } from "@/components/faq/FAQPage";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Frequently asked questions about our cleaning services.",
+  description: "Frequently asked questions about Tori's Cleaning Service.",
 };
 
 export default function FAQ() {

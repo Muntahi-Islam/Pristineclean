@@ -1,17 +1,17 @@
 export const COMPANY = {
-  name: "PristineClean",
-  tagline: "Premium Cleaning Services",
+  name: "Tori's Cleaning Service",
+  tagline: "Professional Cleaning Services",
   description:
-    "Experience the difference of professional cleaning. We provide exceptional residential and commercial cleaning services tailored to your needs.",
-  email: "hello@pristineclean.com",
-  phone: "(555) 123-4567",
-  address: "123 Luxury Lane, Suite 100, Beverly Hills, CA 90210",
+    "Professional cleaning services for residential and commercial spaces in the Houston, TX area. Reliable, thorough, and tailored to your needs.",
+  email: "toriscleaningservice@gmail.com",
+  phone: "+1 713-259-3741",
+  address: "15120 Lee Rd, Humble, TX 77395",
   hours: "Mon - Sat: 7:00 AM - 8:00 PM",
   social: {
-    instagram: "https://instagram.com/pristineclean",
-    facebook: "https://facebook.com/pristineclean",
-    twitter: "https://twitter.com/pristineclean",
-    linkedin: "https://linkedin.com/company/pristineclean",
+    instagram: "https://instagram.com/toriscleaning",
+    facebook: "https://facebook.com/toriscleaning",
+    twitter: "",
+    linkedin: "",
   },
 } as const;
 
@@ -37,7 +37,7 @@ export const SERVICES = [
     title: "Commercial Cleaning",
     subtitle: "Impress your clients, inspire your team",
     description:
-      "Professional cleaning solutions for businesses of all sizes. we maintain pristine environments that reflect your company's standards.",
+      "Professional cleaning solutions for businesses of all sizes. We maintain spotless environments that reflect your company's standards.",
     icon: "building",
     features: [
       "Office spaces & cubicles",
@@ -173,10 +173,10 @@ export const TIME_SLOTS = [
 ] as const;
 
 export const STATS = [
-  { value: 2500, suffix: "+", label: "Homes Cleaned" },
+  { value: 500, suffix: "+", label: "Homes Cleaned" },
   { value: 99, suffix: "%", label: "Satisfaction Rate" },
-  { value: 15, suffix: "+", label: "Years Experience" },
-  { value: 50, suffix: "+", label: "Team Members" },
+  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 10, suffix: "+", label: "Team Members" },
 ] as const;
 
 export const NAV_ITEMS = [

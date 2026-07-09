@@ -23,7 +23,7 @@ export function StepService() {
             key={service.slug}
             className={`relative p-6 border-2 cursor-pointer transition-all ${
               selected === service.title
-                ? "border-blue-600 bg-blue-50/50"
+                ? "border-navy-600 bg-navy-50/50"
                 : "border-navy-200 hover:border-navy-400 bg-white"
             }`}
           >

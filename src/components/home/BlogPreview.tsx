@@ -30,7 +30,7 @@ const blogPosts = [
   },
   {
     slug: "office-cleaning-guide",
-    title: "How to Maintain a Pristine Office Environment",
+    title: "How to Maintain a Spotless Office Environment",
     excerpt:
       "Create a productive workspace with these professional cleaning strategies.",
     image:
@@ -47,7 +47,7 @@ export function BlogPreview() {
         <SectionHeading
           label="Our Blog"
           title="Cleaning Insights & Tips"
-          description="Expert advice to keep your space in pristine condition."
+          description="Expert advice to keep your space in spotless condition."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -55,7 +55,7 @@ export function BlogPreview() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group bg-white border-2 border-navy-100 overflow-hidden transition-all duration-300 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1"
+              className="group bg-white border-2 border-navy-100 overflow-hidden transition-all duration-300 hover:border-navy-600 hover:shadow-xl hover:-translate-y-1"
             >
               <div className="aspect-[16/10] overflow-hidden">
                 <div
@@ -65,7 +65,7 @@ export function BlogPreview() {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-4 text-xs text-navy-400 mb-3">
-                  <span className="font-medium text-blue-600 uppercase tracking-wider">
+                  <span className="font-medium text-navy-600 uppercase tracking-wider">
                     {post.category}
                   </span>
                   <span className="flex items-center gap-1">
@@ -73,7 +73,7 @@ export function BlogPreview() {
                     {formatDate(post.createdAt)}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-semibold text-navy-900 mb-2 group-hover:text-navy-600 transition-colors">
                   {post.title}
                 </h3>
                 <p className="text-sm text-navy-500 leading-relaxed line-clamp-2">

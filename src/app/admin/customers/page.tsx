@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatDate } from "@/lib/utils";
-import { Shield, User, ShieldCheck, RotateCcw } from "lucide-react";
+import { Shield, User, ShieldCheck, RotateCcw, Trash2, CheckCircle, XCircle } from "lucide-react";
 
 interface UserRecord {
   id: string;
@@ -28,7 +28,7 @@ export default function AdminCustomers() {
   const [tab, setTab] = useState<"customers" | "admins">("customers");
   const [customers, setCustomers] = useState<CustomerRecord[]>([]);
   const [users, setUsers] = useState<UserRecord[]>([]);
-  const [promoting, setPromoting] = useState<string | null>(null);
+  const [loading, setLoading] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadCustomers() {
@@ -64,16 +64,57 @@ export default function AdminCustomers() {
     loadUsers();
   }, []);
 
-  async function handlePromote(userId: string, role: string) {
-    setPromoting(userId);
+  async function handleAccept(userId: string) {
+    setLoading(userId);
     try {
       const { updateUserRole } = await import("@/actions/admin-crud");
-      await updateUserRole(userId, role);
-      setUsers((prev) => prev.map((u) => (u.id === userId ? { ...u, role } : u)));
+      await updateUserRole(userId, "ADMIN");
+      setUsers((prev) => prev.map((u) => (u.id === userId ? { ...u, role: "ADMIN" } : u)));
     } catch (e) {
       console.error(e);
     } finally {
-      setPromoting(null);
+      setLoading(null);
+    }
+  }
+
+  async function handleReject(userId: string) {
+    if (!confirm("Reject and delete this signup request?")) return;
+    setLoading(userId);
+    try {
+      const { deleteUser } = await import("@/actions/admin-crud");
+      await deleteUser(userId);
+      setUsers((prev) => prev.filter((u) => u.id !== userId));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(null);
+    }
+  }
+
+  async function handleDelete(userId: string) {
+    if (!confirm("Remove this admin? This cannot be undone.")) return;
+    setLoading(userId);
+    try {
+      const { deleteUser } = await import("@/actions/admin-crud");
+      await deleteUser(userId);
+      setUsers((prev) => prev.filter((u) => u.id !== userId));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(null);
+    }
+  }
+
+  async function handleDemote(userId: string) {
+    setLoading(userId);
+    try {
+      const { updateUserRole } = await import("@/actions/admin-crud");
+      await updateUserRole(userId, "CUSTOMER");
+      setUsers((prev) => prev.map((u) => (u.id === userId ? { ...u, role: "CUSTOMER" } : u)));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(null);
     }
   }
 
@@ -97,7 +138,7 @@ export default function AdminCustomers() {
             onClick={() => setTab(t.id as typeof tab)}
             className={`px-4 py-3 text-sm font-medium border-b-2 -mb-[2px] transition-colors ${
               tab === t.id
-                ? "border-blue-600 text-blue-600"
+                ? "border-navy-600 text-navy-600"
                 : "border-transparent text-navy-500 hover:text-navy-700"
             }`}
           >
@@ -127,7 +168,7 @@ export default function AdminCustomers() {
                   <tr key={c.email} className="border-b border-navy-100 hover:bg-navy-50/50">
                     <td className="p-4 font-medium text-navy-900">{c.name}</td>
                     <td className="p-4 text-navy-700">{c.email}</td>
-                    <td className="p-4 text-navy-500">{c.phone || "—"}</td>
+                    <td className="p-4 text-navy-500">{c.phone || "\u2014"}</td>
                     <td className="p-4 text-navy-900 font-medium">{c.quoteCount}</td>
                     <td className="p-4 text-navy-500">{formatDate(c.lastRequest)}</td>
                   </tr>
@@ -140,12 +181,12 @@ export default function AdminCustomers() {
 
       {tab === "admins" && (
         <div className="space-y-6">
-          {/* Pending Users / Promote Section */}
+          {/* Pending Signup Requests */}
           {pending.length > 0 && (
             <div>
               <h3 className="text-sm font-semibold text-navy-500 uppercase tracking-wider mb-3 flex items-center gap-2">
                 <Shield size={14} />
-                Pending Approval ({pending.length})
+                Signup Requests ({pending.length})
               </h3>
               <div className="bg-white border-2 border-navy-100">
                 <table className="w-full text-sm">
@@ -154,23 +195,31 @@ export default function AdminCustomers() {
                       <th className="text-left p-4 text-navy-500 font-medium">Name</th>
                       <th className="text-left p-4 text-navy-500 font-medium">Email</th>
                       <th className="text-left p-4 text-navy-500 font-medium">Joined</th>
-                      <th className="text-left p-4 text-navy-500 font-medium">Action</th>
+                      <th className="text-left p-4 text-navy-500 font-medium">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     {pending.map((u) => (
                       <tr key={u.id} className="border-b border-navy-100 hover:bg-navy-50/50">
-                        <td className="p-4 font-medium text-navy-900">{u.name || "—"}</td>
+                        <td className="p-4 font-medium text-navy-900">{u.name || "\u2014"}</td>
                         <td className="p-4 text-navy-700">{u.email}</td>
                         <td className="p-4 text-navy-500">{formatDate(u.createdAt)}</td>
-                        <td className="p-4">
+                        <td className="p-4 flex items-center gap-3">
                           <button
-                            onClick={() => handlePromote(u.id, "ADMIN")}
-                            disabled={promoting === u.id}
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 hover:text-blue-700 transition-colors disabled:opacity-50"
+                            onClick={() => handleAccept(u.id)}
+                            disabled={loading === u.id}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-navy-600 hover:text-navy-800 transition-colors disabled:opacity-50"
                           >
-                            <ShieldCheck size={14} />
-                            {promoting === u.id ? "Promoting..." : "Promote to Admin"}
+                            <CheckCircle size={14} />
+                            {loading === u.id ? "Processing..." : "Accept"}
+                          </button>
+                          <button
+                            onClick={() => handleReject(u.id)}
+                            disabled={loading === u.id}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-navy-400 hover:text-red-600 transition-colors disabled:opacity-50"
+                          >
+                            <XCircle size={14} />
+                            Reject
                           </button>
                         </td>
                       </tr>
@@ -178,6 +227,13 @@ export default function AdminCustomers() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+
+          {pending.length === 0 && (
+            <div className="bg-white border-2 border-navy-100 p-8 text-center text-navy-400">
+              <Shield size={32} className="mx-auto mb-2 text-navy-200" />
+              No pending signup requests.
             </div>
           )}
 
@@ -195,7 +251,7 @@ export default function AdminCustomers() {
                     <th className="text-left p-4 text-navy-500 font-medium">Email</th>
                     <th className="text-left p-4 text-navy-500 font-medium">Role</th>
                     <th className="text-left p-4 text-navy-500 font-medium">Joined</th>
-                    <th className="text-left p-4 text-navy-500 font-medium">Action</th>
+                    <th className="text-left p-4 text-navy-500 font-medium">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -204,20 +260,28 @@ export default function AdminCustomers() {
                   ) : (
                     admins.map((u) => (
                       <tr key={u.id} className="border-b border-navy-100 hover:bg-navy-50/50">
-                        <td className="p-4 font-medium text-navy-900">{u.name || "—"}</td>
+                        <td className="p-4 font-medium text-navy-900">{u.name || "\u2014"}</td>
                         <td className="p-4 text-navy-700">{u.email}</td>
                         <td className="p-4">
                           <Badge variant="primary">ADMIN</Badge>
                         </td>
                         <td className="p-4 text-navy-500">{formatDate(u.createdAt)}</td>
-                        <td className="p-4">
+                        <td className="p-4 flex items-center gap-3">
                           <button
-                            onClick={() => handlePromote(u.id, "USER")}
-                            disabled={promoting === u.id}
-                            className="inline-flex items-center gap-1.5 text-xs font-medium text-navy-400 hover:text-red-600 transition-colors disabled:opacity-50"
+                            onClick={() => handleDemote(u.id)}
+                            disabled={loading === u.id}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-navy-400 hover:text-navy-600 transition-colors disabled:opacity-50"
                           >
                             <RotateCcw size={14} />
-                            {promoting === u.id ? "Demoting..." : "Demote to User"}
+                            {loading === u.id ? "Processing..." : "Demote"}
+                          </button>
+                          <button
+                            onClick={() => handleDelete(u.id)}
+                            disabled={loading === u.id}
+                            className="inline-flex items-center gap-1.5 text-xs font-medium text-navy-400 hover:text-red-600 transition-colors disabled:opacity-50"
+                          >
+                            <Trash2 size={14} />
+                            Remove
                           </button>
                         </td>
                       </tr>

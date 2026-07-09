@@ -34,12 +34,12 @@ interface Quote {
 }
 
 const STATUS_FLOW: Record<string, { next: string | null; label: string; icon: any; color: string; bg: string; text: string }> = {
-  PENDING:    { next: "REVIEWED",  label: "Pending",     icon: Clock,        color: "border-l-amber-400 bg-amber-50",  text: "text-amber-700", bg: "bg-amber-100" },
-  REVIEWED:  { next: "CONTACTED", label: "Reviewed",    icon: Eye,          color: "border-l-blue-400 bg-blue-50",    text: "text-blue-700",   bg: "bg-blue-100" },
-  CONTACTED: { next: "COMPLETED", label: "Contacted",   icon: MessageSquare,color: "border-l-indigo-400 bg-indigo-50",text: "text-indigo-700", bg: "bg-indigo-100" },
-  COMPLETED: { next: "CLOSED",    label: "Completed",   icon: CheckCircle2, color: "border-l-emerald-400 bg-emerald-50", text: "text-emerald-700", bg: "bg-emerald-100" },
-  DECLINED:  { next: null,        label: "Declined",    icon: ThumbsDown,   color: "border-l-red-400 bg-red-50",      text: "text-red-700",    bg: "bg-red-100" },
-  CLOSED:    { next: null,        label: "Closed",      icon: XCircle,      color: "border-l-gray-400 bg-gray-50",    text: "text-gray-600",   bg: "bg-gray-100" },
+  PENDING:    { next: "REVIEWED",  label: "Pending",     icon: Clock,        color: "border-l-navy-400 bg-navy-50",    text: "text-navy-700", bg: "bg-navy-100" },
+  REVIEWED:  { next: "CONTACTED", label: "Reviewed",    icon: Eye,          color: "border-l-navy-300 bg-navy-50",    text: "text-navy-600", bg: "bg-navy-100" },
+  CONTACTED: { next: "COMPLETED", label: "Contacted",   icon: MessageSquare,color: "border-l-navy-500 bg-navy-50",    text: "text-navy-800", bg: "bg-navy-200" },
+  COMPLETED: { next: "CLOSED",    label: "Completed",   icon: CheckCircle2, color: "border-l-navy-600 bg-navy-50",    text: "text-navy-800", bg: "bg-navy-200" },
+  DECLINED:  { next: null,        label: "Declined",    icon: ThumbsDown,   color: "border-l-navy-700 bg-navy-50",    text: "text-navy-800", bg: "bg-navy-200" },
+  CLOSED:    { next: null,        label: "Closed",      icon: XCircle,      color: "border-l-navy-200 bg-navy-50",    text: "text-navy-500", bg: "bg-navy-100" },
 };
 
 export default function AdminQuotes() {
@@ -174,7 +174,7 @@ export default function AdminQuotes() {
             placeholder="Search customers..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full h-10 pl-10 pr-4 border-2 border-navy-200 text-sm text-navy-900 focus:border-blue-600 focus:outline-none bg-white"
+            className="w-full h-10 pl-10 pr-4 border-2 border-navy-200 text-sm text-navy-900 focus:border-navy-600 focus:outline-none bg-white"
           />
         </div>
       </div>
@@ -210,7 +210,7 @@ export default function AdminQuotes() {
                         key={quote.id}
                         onClick={() => setSelectedQuote(quote)}
                         className={`border-b border-navy-100 hover:bg-navy-50 transition-all cursor-pointer ${
-                          selectedQuote?.id === quote.id ? "bg-blue-50/50 ring-2 ring-inset ring-blue-200" : ""
+                          selectedQuote?.id === quote.id ? "bg-navy-50/50 ring-2 ring-inset ring-navy-200" : ""
                         }`}
                       >
                         <td className="p-4">
@@ -276,7 +276,7 @@ export default function AdminQuotes() {
                   {selectedQuote.extras?.length > 0 && (
                     <div className="flex flex-wrap gap-1 mt-2">
                       {selectedQuote.extras.map((e: string) => (
-                        <span key={e} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5">{e}</span>
+                        <span key={e} className="text-xs bg-navy-50 text-navy-600 px-2 py-0.5">{e}</span>
                       ))}
                     </div>
                   )}
@@ -313,7 +313,7 @@ export default function AdminQuotes() {
                         placeholder="Set price..."
                         value={priceInput}
                         onChange={(e) => setPriceInput(e.target.value)}
-                        className="w-full h-10 pl-8 pr-3 border-2 border-navy-200 text-sm font-medium text-navy-900 focus:border-blue-600 focus:outline-none"
+                        className="w-full h-10 pl-8 pr-3 border-2 border-navy-200 text-sm font-medium text-navy-900 focus:border-navy-600 focus:outline-none"
                       />
                     </div>
                     <button
@@ -326,7 +326,7 @@ export default function AdminQuotes() {
                     </button>
                   </div>
                   {selectedQuote.estimatedValue && (
-                    <p className="text-lg font-bold text-emerald-600 mt-2">
+                    <p className="text-lg font-bold text-navy-600 mt-2">
                       {formatCurrency(Number(selectedQuote.estimatedValue))}
                     </p>
                   )}
@@ -343,7 +343,7 @@ export default function AdminQuotes() {
                         key={action.status}
                         variant={action.variant}
                         size="sm"
-                        className={`w-full ${isDecline ? "border-red-300 text-red-600 hover:bg-red-50 hover:border-red-400 hover:text-red-700" : ""}`}
+                        className={`w-full ${isDecline ? "border-navy-300 text-navy-600 hover:bg-navy-50 hover:border-navy-400 hover:text-navy-700" : ""}`}
                         disabled={actionLoading === selectedQuote.id}
                         onClick={() => handleStatusChange(selectedQuote.id, action.status)}
                       >
@@ -364,7 +364,7 @@ export default function AdminQuotes() {
                     <Button
                       variant="primary"
                       size="sm"
-                      className="w-full bg-emerald-600 hover:bg-emerald-700"
+                      className="w-full bg-navy-600 hover:bg-navy-700"
                       onClick={() => handleGenerateInvoice(selectedQuote.id)}
                     >
                       <FileSpreadsheet size={14} className="mr-2" />
@@ -376,7 +376,7 @@ export default function AdminQuotes() {
                   {selectedQuote.status === "DECLINED" && (
                     <button
                       onClick={() => handleStatusChange(selectedQuote.id, "PENDING")}
-                      className="w-full text-xs text-navy-400 hover:text-blue-600 transition-colors py-2 flex items-center justify-center gap-1"
+                      className="w-full text-xs text-navy-400 hover:text-navy-600 transition-colors py-2 flex items-center justify-center gap-1"
                     >
                       <RefreshCw size={13} /> Restore to Pending
                     </button>

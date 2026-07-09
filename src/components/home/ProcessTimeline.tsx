@@ -21,7 +21,7 @@ const steps = [
     icon: Sparkles,
     title: "Professional Cleaning",
     description:
-      "Our trained team arrives on schedule with premium equipment and eco-friendly products.",
+      "Our trained team arrives on schedule with professional equipment and eco-friendly products.",
   },
   {
     icon: ShieldCheck,
@@ -58,7 +58,7 @@ export function ProcessTimeline() {
                       index % 2 === 0 ? "lg:text-right lg:ml-auto" : "lg:text-left"
                     }`}
                   >
-                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+                    <span className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-600">
                       Step 0{index + 1}
                     </span>
                     <h3 className="mt-3 text-2xl font-semibold text-navy-900">
@@ -71,7 +71,7 @@ export function ProcessTimeline() {
                 </div>
 
                 <div className="relative z-10 w-14 h-14 rounded-full bg-white border-2 border-navy-200 flex items-center justify-center shrink-0">
-                  <step.icon size={22} className="text-blue-600" />
+                  <step.icon size={22} className="text-navy-600" />
                 </div>
 
                 <div className="flex-1 hidden lg:block" />

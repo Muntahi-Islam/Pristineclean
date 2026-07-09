@@ -5,18 +5,18 @@ import { Button } from "@/components/ui/button";
 import { Save, RotateCcw } from "lucide-react";
 
 const DEFAULT_SETTINGS: Record<string, string> = {
-  companyName: "PristineClean",
-  companyTagline: "Premium Cleaning Services",
-  supportEmail: "hello@pristineclean.com",
-  phone: "(555) 123-4567",
-  address: "123 Luxury Lane, Suite 100, Beverly Hills, CA 90210",
+  companyName: "Tori's Cleaning Service",
+  companyTagline: "Professional Cleaning Services",
+  supportEmail: "toriscleaningservice@gmail.com",
+  phone: "+1 713-259-3741",
+  address: "15120 Lee Rd, Humble, TX 77395",
   hours: "Mon - Sat: 7:00 AM - 8:00 PM",
-  metaTitle: "PristineClean | Premium Cleaning Services",
-  metaDescription: "Experience premium cleaning services for residential and commercial spaces.",
-  facebook: "https://facebook.com/pristineclean",
-  instagram: "https://instagram.com/pristineclean",
-  twitter: "https://twitter.com/pristineclean",
-  linkedin: "https://linkedin.com/company/pristineclean",
+  metaTitle: "Tori's Cleaning Service | Professional Cleaning in Houston",
+  metaDescription: "Professional cleaning services for residential and commercial spaces in the Houston, TX area.",
+  facebook: "https://facebook.com/toriscleaning",
+  instagram: "https://instagram.com/toriscleaning",
+  twitter: "",
+  linkedin: "",
 };
 
 export default function AdminSettings() {
@@ -73,7 +73,7 @@ export default function AdminSettings() {
         {/* Company Info */}
         <section>
           <h2 className="text-lg font-semibold text-navy-900 mb-4 flex items-center gap-2">
-            <span className="w-1 h-5 bg-blue-600 inline-block" />
+            <span className="w-1 h-5 bg-navy-600 inline-block" />
             Company Information
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -91,7 +91,7 @@ export default function AdminSettings() {
         {/* SEO */}
         <section>
           <h2 className="text-lg font-semibold text-navy-900 mb-4 flex items-center gap-2">
-            <span className="w-1 h-5 bg-blue-600 inline-block" />
+            <span className="w-1 h-5 bg-navy-600 inline-block" />
             SEO Defaults
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -105,7 +105,7 @@ export default function AdminSettings() {
         {/* Social Media */}
         <section>
           <h2 className="text-lg font-semibold text-navy-900 mb-4 flex items-center gap-2">
-            <span className="w-1 h-5 bg-blue-600 inline-block" />
+            <span className="w-1 h-5 bg-navy-600 inline-block" />
             Social Media Links
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -128,7 +128,7 @@ function Field({ label, value, onChange, type = "text", textarea = false, classN
       <label className="text-sm font-medium text-navy-900/80 block mb-1.5">{label}</label>
       {textarea ? (
         <textarea
-          className="w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-blue-600 focus:outline-none resize-y"
+          className="w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-navy-600 focus:outline-none resize-y"
           rows={3}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -136,7 +136,7 @@ function Field({ label, value, onChange, type = "text", textarea = false, classN
       ) : (
         <input
           type={type}
-          className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+          className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
           value={value}
           onChange={(e) => onChange(e.target.value)}
         />

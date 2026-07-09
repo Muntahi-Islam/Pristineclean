@@ -16,13 +16,13 @@ export function StepConfirmation({ requestId }: StepConfirmationProps) {
         Quote Request Received!
       </h2>
       <p className="text-navy-500 mb-8">
-        Thank you for choosing PristineClean. We&apos;ve received your request
-        and will review it shortly.
+        Thank you for choosing Tori&apos;s Cleaning Service. We&apos;ve received
+        your request and will review it shortly.
       </p>
 
       <div className="bg-white border-2 border-navy-100 p-6 mb-8">
         <p className="text-sm text-navy-500 mb-2">Your Request ID</p>
-        <p className="text-2xl font-mono font-bold text-blue-600 tracking-wider">
+        <p className="text-2xl font-mono font-bold text-navy-600 tracking-wider">
           #{requestId}
         </p>
       </div>

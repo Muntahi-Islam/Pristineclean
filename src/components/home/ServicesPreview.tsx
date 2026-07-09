@@ -21,7 +21,7 @@ export function ServicesPreview() {
       <AnimatedSection className="container-main">
         <SectionHeading
           label="Our Services"
-          title="Premium Cleaning Solutions"
+          title="Professional Cleaning Solutions"
           description="Comprehensive cleaning services tailored to your specific needs."
         />
 
@@ -32,12 +32,12 @@ export function ServicesPreview() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group relative bg-white border-2 border-navy-100 p-8 transition-all duration-300 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1"
+                className="group relative bg-white border-2 border-navy-100 p-8 transition-all duration-300 hover:border-navy-600 hover:shadow-xl hover:-translate-y-1"
               >
-                <div className="w-12 h-12 bg-blue-600/10 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                <div className="w-12 h-12 bg-navy-600/10 flex items-center justify-center mb-6 group-hover:bg-navy-600 transition-colors duration-300">
                   <Icon
                     size={22}
-                    className="text-blue-600 group-hover:text-white transition-colors duration-300"
+                    className="text-navy-600 group-hover:text-white transition-colors duration-300"
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-navy-900 mb-3">
@@ -46,7 +46,7 @@ export function ServicesPreview() {
                 <p className="text-sm text-navy-500 leading-relaxed mb-6 line-clamp-2">
                   {service.description}
                 </p>
-                <div className="flex items-center gap-1 text-sm font-medium text-blue-600 group-hover:gap-2 transition-all">
+                <div className="flex items-center gap-1 text-sm font-medium text-navy-600 group-hover:gap-2 transition-all">
                   Learn More <ArrowRight size={14} />
                 </div>
               </Link>

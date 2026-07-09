@@ -81,21 +81,21 @@ export default function AdminFAQ() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Question *</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.question} onChange={(e) => setForm({ ...form, question: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.question} onChange={(e) => setForm({ ...form, question: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Answer *</label>
-              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y" rows={4} value={form.answer} onChange={(e) => setForm({ ...form, answer: e.target.value })} />
+              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y" rows={4} value={form.answer} onChange={(e) => setForm({ ...form, answer: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Category</label>
-              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
+              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
                 {FAQ_CATEGORIES.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Order</label>
-              <input type="number" className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.order} onChange={(e) => setForm({ ...form, order: Number(e.target.value) })} />
+              <input type="number" className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.order} onChange={(e) => setForm({ ...form, order: Number(e.target.value) })} />
             </div>
           </div>
           <div className="flex gap-2 pt-2">
@@ -125,7 +125,7 @@ export default function AdminFAQ() {
                   </div>
                   <div className="flex items-center gap-2">
                     {!faq.published && <span className="text-xs text-navy-400">Draft</span>}
-                    <button onClick={(e) => { e.stopPropagation(); openEdit(faq); }} className="p-1 text-navy-400 hover:text-blue-600 transition-colors"><Pencil size={13} /></button>
+                    <button onClick={(e) => { e.stopPropagation(); openEdit(faq); }} className="p-1 text-navy-400 hover:text-navy-600 transition-colors"><Pencil size={13} /></button>
                     <button onClick={(e) => { e.stopPropagation(); handleDelete(faq.id); }} className="p-1 text-navy-400 hover:text-red-600 transition-colors"><Trash2 size={13} /></button>
                   </div>
                 </button>

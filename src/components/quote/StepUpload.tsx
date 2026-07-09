@@ -44,7 +44,7 @@ export function StepUpload() {
         onDrop={handleDrop}
         className={`border-2 border-dashed p-12 text-center transition-all ${
           isDragOver
-            ? "border-blue-600 bg-blue-50/30"
+            ? "border-navy-600 bg-navy-50/30"
             : "border-navy-300 hover:border-navy-400"
         }`}
       >

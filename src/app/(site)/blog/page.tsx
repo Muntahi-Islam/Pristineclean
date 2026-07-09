@@ -3,7 +3,7 @@ import { BlogListPage } from "@/components/blog/BlogListPage";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Cleaning tips, guides, and insights from the PristineClean team.",
+  description: "Cleaning tips, guides, and insights from the Tori's Cleaning Service team.",
 };
 
 export default function Blog() {
@@ -15,7 +15,7 @@ export default function Blog() {
             Our Blog
           </h1>
           <p className="text-lg text-navy-500">
-            Expert cleaning insights, tips, and guides for maintaining a pristine space.
+            Expert cleaning insights, tips, and guides for maintaining a spotless space.
           </p>
         </div>
         <BlogListPage />

@@ -155,3 +155,11 @@ export async function updateUserRole(userId: string, role: string) {
   await prisma.user.update({ where: { id: userId }, data: { role } });
   revalidatePath("/admin");
 }
+
+export async function deleteUser(userId: string) {
+  // Delete related sessions and accounts first
+  await prisma.session.deleteMany({ where: { userId } });
+  await prisma.account.deleteMany({ where: { userId } });
+  await prisma.user.delete({ where: { id: userId } });
+  revalidatePath("/admin");
+}

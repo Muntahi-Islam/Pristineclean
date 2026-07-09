@@ -116,7 +116,7 @@ export function GalleryPage() {
           >
             <button
               onClick={() => setLightboxIndex(null)}
-              className="absolute top-6 right-6 text-white hover:text-blue-400 transition-colors"
+              className="absolute top-6 right-6 text-white hover:text-navy-300 transition-colors"
             >
               <X size={28} />
             </button>
@@ -126,7 +126,7 @@ export function GalleryPage() {
                 e.stopPropagation();
                 setLightboxIndex((i) => (i! > 0 ? i! - 1 : filtered.length - 1));
               }}
-              className="absolute left-6 text-white hover:text-blue-400 transition-colors"
+              className="absolute left-6 text-white hover:text-navy-300 transition-colors"
             >
               <ChevronLeft size={32} />
             </button>
@@ -154,7 +154,7 @@ export function GalleryPage() {
                 e.stopPropagation();
                 setLightboxIndex((i) => (i! < filtered.length - 1 ? i! + 1 : 0));
               }}
-              className="absolute right-6 text-white hover:text-blue-400 transition-colors"
+              className="absolute right-6 text-white hover:text-navy-300 transition-colors"
             >
               <ChevronRight size={32} />
             </button>

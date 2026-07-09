@@ -3,16 +3,16 @@
 import { prisma } from "@/lib/prisma";
 
 const DEFAULTS = {
-  companyName: "PristineClean",
-  companyTagline: "Premium Cleaning Services",
-  supportEmail: "hello@pristineclean.com",
-  phone: "(555) 123-4567",
-  address: "123 Luxury Lane, Suite 100, Beverly Hills, CA 90210",
+  companyName: "Tori's Cleaning Service",
+  companyTagline: "Professional Cleaning Services",
+  supportEmail: "toriscleaningservice@gmail.com",
+  phone: "+1 713-259-3741",
+  address: "15120 Lee Rd, Humble, TX 77395",
   hours: "Mon - Sat: 7:00 AM - 8:00 PM",
-  facebook: "https://facebook.com/pristineclean",
-  instagram: "https://instagram.com/pristineclean",
-  twitter: "https://twitter.com/pristineclean",
-  linkedin: "https://linkedin.com/company/pristineclean",
+  facebook: "https://facebook.com/toriscleaning",
+  instagram: "https://instagram.com/toriscleaning",
+  twitter: "",
+  linkedin: "",
 };
 
 export type SiteSettings = typeof DEFAULTS;

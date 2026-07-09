@@ -3,7 +3,7 @@ import { TestimonialsPage } from "@/components/testimonials/TestimonialsPage";
 
 export const metadata: Metadata = {
   title: "Testimonials",
-  description: "Hear from our satisfied customers.",
+  description: "Hear from our satisfied customers at Tori's Cleaning Service.",
 };
 
 export default function Testimonials() {

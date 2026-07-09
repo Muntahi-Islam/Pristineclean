@@ -19,7 +19,7 @@ export async function submitContact(data: ContactInput) {
 
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: `PristineClean <noreply@${process.env.RESEND_DOMAIN ?? "pristineclean.com"}>`,
+        from: `Tori's Cleaning Service <noreply@${process.env.RESEND_DOMAIN ?? "toriscleaningservice.com"}>`,
         to: COMPANY.email,
         subject: `New Contact: ${validated.data.subject}`,
         text: `

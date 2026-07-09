@@ -13,11 +13,11 @@ const faqs = [
       },
       {
         q: "Are you insured and bonded?",
-        a: "Yes, absolutely. PristineClean is fully insured and bonded for your peace of mind. All our team members undergo background checks and thorough training.",
+        a: "Yes, absolutely. Tori's Cleaning Service is fully insured and bonded for your peace of mind. All our team members undergo background checks and thorough training.",
       },
       {
         q: "What areas do you serve?",
-        a: "We serve the greater Los Angeles area including Beverly Hills, Santa Monica, West Hollywood, Malibu, Bel Air, and surrounding premium neighborhoods.",
+        a: "We serve the greater Houston area including Humble, Katy, Sugar Land, Pearland, Spring, The Woodlands, Pasadena, and surrounding neighborhoods.",
       },
       {
         q: "Do you use eco-friendly products?",
@@ -100,7 +100,7 @@ export function FAQPage() {
           placeholder="Search questions..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full h-12 border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+          className="w-full h-12 border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
         />
       </div>
 

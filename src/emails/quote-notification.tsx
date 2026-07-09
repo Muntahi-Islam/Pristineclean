@@ -69,7 +69,7 @@ export function QuoteNotificationEmail({
           <Text style={text}>
             Log in to the admin dashboard to review and respond to this request.
           </Text>
-          <Text style={footer}>PristineClean - Admin Notification</Text>
+          <Text style={footer}>Tori's Cleaning Service - Admin Notification</Text>
         </Container>
       </Body>
     </Html>

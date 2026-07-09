@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@/components/ui/button";
+import { COMPANY } from "@/lib/constants";
 
 export default function AdminLogin() {
   const router = useRouter();
@@ -12,12 +13,14 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSuccess("");
 
     try {
       if (mode === "signup") {
@@ -31,14 +34,11 @@ export default function AdminLogin() {
           return;
         }
         if (data?.user) {
-          // Promote to admin
-          await fetch("/api/admin/promote", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ userId: data.user.id }),
-          });
-          router.push("/admin");
-          router.refresh();
+          setSuccess("Account created! Waiting for admin approval. You will be able to sign in once an admin approves your account.");
+          setMode("signin");
+          setEmail("");
+          setPassword("");
+          setName("");
         }
       } else {
         const { data, error: signInError } = await authClient.signIn.email({
@@ -66,11 +66,11 @@ export default function AdminLogin() {
       <div className="w-full max-w-sm mx-4">
         <div className="text-center mb-10">
           <h1 className="text-2xl font-bold text-navy-900">
-            <span className="font-serif">Pristine</span>
-            <span className="text-blue-600">Admin</span>
+            <span className="font-serif">{COMPANY.name.split(" ")[0]}</span>
+            <span className="text-navy-600"> Admin</span>
           </h1>
           <p className="text-sm text-navy-500 mt-2">
-            {mode === "signin" ? "Sign in to the dashboard" : "Create admin account"}
+            {mode === "signin" ? "Sign in to the dashboard" : "Request admin access"}
           </p>
         </div>
 
@@ -84,6 +84,12 @@ export default function AdminLogin() {
             </div>
           )}
 
+          {success && (
+            <div className="bg-navy-50 border border-navy-200 text-navy-700 text-sm px-4 py-3">
+              {success}
+            </div>
+          )}
+
           {mode === "signup" && (
             <div>
               <label className="text-sm font-medium text-navy-900/80 block mb-1.5">
@@ -94,8 +100,8 @@ export default function AdminLogin() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
-                placeholder="Admin"
+                className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
+                placeholder="Your name"
               />
             </div>
           )}
@@ -109,8 +115,8 @@ export default function AdminLogin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
-              placeholder="admin@pristineclean.com"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
+              placeholder="admin@example.com"
             />
           </div>
 
@@ -123,7 +129,7 @@ export default function AdminLogin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
               placeholder="••••••••"
             />
           </div>
@@ -139,7 +145,7 @@ export default function AdminLogin() {
               ? "Processing..."
               : mode === "signin"
                 ? "Sign In"
-                : "Create Account"}
+                : "Request Access"}
           </Button>
 
           <p className="text-center text-sm text-navy-500">
@@ -148,10 +154,10 @@ export default function AdminLogin() {
                 No account?{" "}
                 <button
                   type="button"
-                  onClick={() => setMode("signup")}
-                  className="text-blue-600 hover:underline"
+                  onClick={() => { setMode("signup"); setError(""); setSuccess(""); }}
+                  className="text-navy-600 hover:underline"
                 >
-                  Sign up
+                  Request access
                 </button>
               </>
             ) : (
@@ -159,8 +165,8 @@ export default function AdminLogin() {
                 Already have an account?{" "}
                 <button
                   type="button"
-                  onClick={() => setMode("signin")}
-                  className="text-blue-600 hover:underline"
+                  onClick={() => { setMode("signin"); setError(""); setSuccess(""); }}
+                  className="text-navy-600 hover:underline"
                 >
                   Sign in
                 </button>

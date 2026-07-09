@@ -48,9 +48,9 @@ export function QuoteConfirmationEmail({
           <Text style={text}>
             Our team will review your request and contact you within 24 hours
             with a personalized quote. If you have any questions, reply to this
-            email or call us at (555) 123-4567.
+            email or call us at +1 713-259-3741.
           </Text>
-          <Text style={footer}>PristineClean - Premium Cleaning Services</Text>
+          <Text style={footer}>Tori's Cleaning Service - Professional Cleaning Services</Text>
         </Container>
       </Body>
     </Html>

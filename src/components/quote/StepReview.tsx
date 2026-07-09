@@ -64,7 +64,7 @@ export function StepReview({ onBack, isSubmitting, onSubmit }: StepReviewProps) 
         <button
           onClick={onSubmit}
           disabled={isSubmitting}
-          className="flex-1 py-3 bg-blue-600 text-white font-semibold transition-all hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 py-3 bg-navy-600 text-white font-semibold transition-all hover:bg-navy-500 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Submitting..." : "Submit Quote Request"}
         </button>

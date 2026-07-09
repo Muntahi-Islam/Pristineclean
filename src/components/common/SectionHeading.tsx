@@ -24,7 +24,7 @@ export function SectionHeading({
       )}
     >
       {label && (
-        <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-blue-600 mb-4">
+        <span className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-navy-600 mb-4">
           {label}
         </span>
       )}

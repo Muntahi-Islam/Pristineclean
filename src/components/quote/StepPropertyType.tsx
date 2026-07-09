@@ -45,14 +45,14 @@ export function StepPropertyType() {
               onClick={() => setValue("propertyType", type.value as "RESIDENTIAL" | "COMMERCIAL")}
               className={`p-8 text-left border-2 transition-all ${
                 isSelected
-                  ? "border-blue-600 bg-blue-50/50"
+                  ? "border-navy-600 bg-navy-50/50"
                   : "border-navy-200 hover:border-navy-400 bg-white"
               }`}
             >
               <Icon
                 size={32}
                 className={`mb-4 ${
-                  isSelected ? "text-blue-600" : "text-navy-400"
+                  isSelected ? "text-navy-600" : "text-navy-400"
                 }`}
               />
               <h3 className="text-lg font-semibold text-navy-900 mb-1">

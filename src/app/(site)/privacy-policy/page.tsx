@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "PristineClean privacy policy.",
+  description: "Tori's Cleaning Service privacy policy.",
 };
 
 export default function PrivacyPolicy() {
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
           </h2>
           <p>
             If you have any questions about this Privacy Policy, please contact
-            us at hello@pristineclean.com.
+            us at toriscleaningservice@gmail.com.
           </p>
         </div>
       </div>

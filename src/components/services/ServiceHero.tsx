@@ -13,16 +13,16 @@ interface ServiceHeroProps {
 export function ServiceHero({ title, subtitle, description }: ServiceHeroProps) {
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-warm-50">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-navy-900/10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-600/5 via-transparent to-navy-900/10" />
       <div className="container-main relative">
         <div className="max-w-2xl">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-600">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-navy-600">
             Our Services
           </span>
           <h1 className="mt-4 text-4xl md:text-5xl lg:text-6xl font-semibold text-navy-900 leading-tight">
             {title}
           </h1>
-          <p className="mt-4 text-xl text-blue-600 font-serif italic">
+          <p className="mt-4 text-xl text-navy-600 font-serif italic">
             {subtitle}
           </p>
           <p className="mt-6 text-lg text-navy-500 leading-relaxed max-w-xl">

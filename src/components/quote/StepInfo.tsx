@@ -23,7 +23,7 @@ export function StepInfo() {
             </label>
             <input
               {...register("customerName")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
               placeholder="John Doe"
             />
           </div>
@@ -34,7 +34,7 @@ export function StepInfo() {
             <input
               type="email"
               {...register("customerEmail")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
               placeholder="john@example.com"
             />
           </div>
@@ -48,7 +48,7 @@ export function StepInfo() {
             <input
               type="tel"
               {...register("customerPhone")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
               placeholder="(555) 123-4567"
             />
           </div>
@@ -58,7 +58,7 @@ export function StepInfo() {
             </label>
             <input
               {...register("company")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
               placeholder="Company name"
             />
           </div>
@@ -71,7 +71,7 @@ export function StepInfo() {
           <textarea
             {...register("notes")}
             rows={4}
-            className="flex w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-blue-600 focus:outline-none resize-y"
+            className="flex w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-navy-600 focus:outline-none resize-y"
             placeholder="Any special requests or details we should know..."
           />
         </div>

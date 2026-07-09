@@ -19,7 +19,7 @@ const posts: Record<string, {
     title: "Essential Spring Cleaning Tips for a Fresh Home",
     excerpt: "Transform your living space with our comprehensive spring cleaning guide.",
     content: `
-Spring is the perfect time to refresh your living space and shake off the winter dust. At PristineClean, we believe that a thorough spring cleaning sets the tone for the months ahead.
+Spring is the perfect time to refresh your living space and shake off the winter dust. At Tori's Cleaning Service, we believe that a thorough spring cleaning sets the tone for the months ahead.
 
 ## Start with a Plan
 
@@ -39,13 +39,13 @@ Baseboards, window tracks, behind appliances, and inside cabinets are often negl
 
 ## Professional Help
 
-For a truly transformative clean, consider professional services. Our team at PristineClean specializes in deep spring cleaning that reaches every corner of your home.
+For a truly transformative clean, consider professional services. Our team at Tori's Cleaning Service specializes in deep spring cleaning that reaches every corner of your home.
 
-Contact us today to schedule your spring cleaning and experience the PristineClean difference.
+Contact us today to schedule your spring cleaning and experience the Tori's Cleaning difference.
     `,
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80",
     category: "Tips",
-    author: "PristineClean Team",
+    author: "Tori's Cleaning Team",
     readingTime: 5,
     createdAt: new Date("2026-06-15"),
   },
@@ -71,16 +71,16 @@ Every drop of conventional cleaner eventually makes its way into our water syste
 
 Modern eco-friendly products are just as effective as their chemical counterparts. When combined with proper technique and professional equipment, the results are outstanding.
 
-At PristineClean, we've committed to using eco-friendly products across all our services. Your space stays clean, and the planet stays healthy.
+At Tori's Cleaning Service, we've committed to using eco-friendly products across all our services. Your space stays clean, and the planet stays healthy.
     `,
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80",
     category: "Eco",
-    author: "Sarah Mitchell",
+    author: "Tori's Cleaning Team",
     readingTime: 4,
     createdAt: new Date("2026-05-28"),
   },
   "office-cleaning-guide": {
-    title: "How to Maintain a Pristine Office Environment",
+    title: "How to Maintain a Spotless Office Environment",
     excerpt: "Create a productive workspace with these professional cleaning strategies.",
     content: `
 A clean office isn't just about appearances — it directly impacts productivity, employee health, and client impressions.
@@ -95,7 +95,7 @@ Offices are breeding grounds for germs. Regular professional cleaning reduces si
 
 ## Professional Image
 
-Your office environment speaks volumes about your company. A pristine workspace conveys attention to detail, professionalism, and care for your team and clients.
+Your office environment speaks volumes about your company. A spotless workspace conveys attention to detail, professionalism, and care for your team and clients.
 
 ## Recommended Schedule
 
@@ -105,11 +105,11 @@ Monthly: Deep cleaning, carpet care, window cleaning
 
 ## Partner with Professionals
 
-At PristineClean, we offer customized commercial cleaning plans that work around your business hours. Let us handle the cleaning so you can focus on what matters most.
+At Tori's Cleaning Service, we offer customized commercial cleaning plans that work around your business hours. Let us handle the cleaning so you can focus on what matters most.
     `,
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
     category: "Commercial",
-    author: "James Chen",
+    author: "Tori's Cleaning Team",
     readingTime: 6,
     createdAt: new Date("2026-05-10"),
   },
@@ -151,7 +151,7 @@ export default async function BlogPostPage({
       <div className="container-main max-w-3xl">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-blue-600 mb-8 transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-navy-500 hover:text-navy-600 mb-8 transition-colors"
         >
           <ArrowLeft size={16} />
           Back to Blog
@@ -165,7 +165,7 @@ export default async function BlogPostPage({
         </div>
 
         <div className="flex items-center gap-4 text-sm text-navy-500 mb-4">
-          <span className="font-medium text-blue-600 uppercase tracking-wider">
+          <span className="font-medium text-navy-600 uppercase tracking-wider">
             {post.category}
           </span>
           <span className="flex items-center gap-1">

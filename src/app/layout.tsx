@@ -17,14 +17,14 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: {
-    default: "PristineClean | Premium Cleaning Services",
-    template: "%s | PristineClean",
+    default: "Tori's Cleaning Service | Professional Cleaning in Houston",
+    template: "%s | Tori's Cleaning Service",
   },
   description:
-    "Experience premium cleaning services for residential and commercial spaces. Professional, reliable, and meticulously thorough cleaning tailored to your needs.",
+    "Professional cleaning services for residential and commercial spaces in the Houston, TX area. Reliable, thorough, and tailored to your needs.",
   keywords: [
     "cleaning service",
-    "premium cleaning",
+    "professional cleaning",
     "residential cleaning",
     "commercial cleaning",
     "deep cleaning",
@@ -32,22 +32,23 @@ export const metadata: Metadata = {
     "office cleaning",
     "carpet cleaning",
     "window cleaning",
+    "Houston cleaning",
   ],
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "PristineClean",
-    title: "PristineClean | Premium Cleaning Services",
+    siteName: "Tori's Cleaning Service",
+    title: "Tori's Cleaning Service | Professional Cleaning in Houston",
     description:
-      "Experience the difference of professional premium cleaning services.",
+      "Professional cleaning services for residential and commercial spaces in the Houston, TX area.",
     url: process.env.NEXT_PUBLIC_APP_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "PristineClean | Premium Cleaning Services",
+    title: "Tori's Cleaning Service | Professional Cleaning in Houston",
     description:
-      "Experience the difference of professional premium cleaning services.",
+      "Professional cleaning services for residential and commercial spaces in the Houston, TX area.",
   },
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"

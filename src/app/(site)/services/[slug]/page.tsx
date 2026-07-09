@@ -58,7 +58,7 @@ export default async function ServicePage({
                   <li key={feature} className="flex items-start gap-3">
                     <CheckCircle
                       size={20}
-                      className="text-blue-600 shrink-0 mt-0.5"
+                      className="text-navy-600 shrink-0 mt-0.5"
                     />
                     <span className="text-navy-700">{feature}</span>
                   </li>
@@ -107,9 +107,9 @@ export default async function ServicePage({
                 <Link
                   key={s.slug}
                   href={`/services/${s.slug}`}
-                  className="group p-6 bg-warm-50 border-2 border-navy-100 transition-all hover:border-blue-600 hover:shadow-lg"
+                  className="group p-6 bg-warm-50 border-2 border-navy-100 transition-all hover:border-navy-600 hover:shadow-lg"
                 >
-                  <h3 className="font-semibold text-navy-900 mb-2 group-hover:text-blue-600 transition-colors">
+                  <h3 className="font-semibold text-navy-900 mb-2 group-hover:text-navy-600 transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-sm text-navy-500 line-clamp-2">

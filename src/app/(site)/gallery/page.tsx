@@ -3,7 +3,7 @@ import { GalleryPage } from "@/components/gallery/GalleryPage";
 
 export const metadata: Metadata = {
   title: "Gallery",
-  description: "Browse our portfolio of transformed spaces.",
+  description: "Browse our portfolio of transformed spaces by Tori's Cleaning Service.",
 };
 
 export default function Gallery() {

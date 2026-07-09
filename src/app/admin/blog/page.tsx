@@ -104,40 +104,40 @@ export default function AdminBlog() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Title *</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Slug</label>
               <div className="flex gap-2">
-                <input className="flex-1 h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none font-mono" value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} />
-                <button onClick={() => setForm({ ...form, slug: generateSlug(form.title) })} className="px-2 text-xs text-blue-600 hover:text-blue-700 font-medium">Auto</button>
+                <input className="flex-1 h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none font-mono" value={form.slug} onChange={(e) => setForm({ ...form, slug: e.target.value })} />
+                <button onClick={() => setForm({ ...form, slug: generateSlug(form.title) })} className="px-2 text-xs text-navy-600 hover:text-navy-700 font-medium">Auto</button>
               </div>
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Category</label>
-              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
+              <select className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}>
                 {categories.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Author</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.author} onChange={(e) => setForm({ ...form, author: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.author} onChange={(e) => setForm({ ...form, author: e.target.value })} />
             </div>
             <div>
               <label className="text-xs font-medium text-navy-500 mb-1 block">Reading Time (min)</label>
-              <input type="number" className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.readingTime} onChange={(e) => setForm({ ...form, readingTime: e.target.value })} />
+              <input type="number" className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.readingTime} onChange={(e) => setForm({ ...form, readingTime: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Featured Image URL</label>
-              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} />
+              <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.image} onChange={(e) => setForm({ ...form, image: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Excerpt</label>
-              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y" rows={2} value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} />
+              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y" rows={2} value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} />
             </div>
             <div className="md:col-span-2">
               <label className="text-xs font-medium text-navy-500 mb-1 block">Content *</label>
-              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y font-mono" rows={8} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
+              <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y font-mono" rows={8} value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} />
             </div>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
@@ -156,19 +156,19 @@ export default function AdminBlog() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-medium text-navy-500 mb-1 block">SEO Title</label>
-                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.seoTitle} onChange={(e) => setForm({ ...form, seoTitle: e.target.value })} />
+                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.seoTitle} onChange={(e) => setForm({ ...form, seoTitle: e.target.value })} />
                 </div>
                 <div>
                   <label className="text-xs font-medium text-navy-500 mb-1 block">Canonical URL</label>
-                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.canonical} onChange={(e) => setForm({ ...form, canonical: e.target.value })} />
+                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.canonical} onChange={(e) => setForm({ ...form, canonical: e.target.value })} />
                 </div>
                 <div className="md:col-span-2">
                   <label className="text-xs font-medium text-navy-500 mb-1 block">SEO Description</label>
-                  <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-blue-600 focus:outline-none resize-y" rows={2} value={form.seoDesc} onChange={(e) => setForm({ ...form, seoDesc: e.target.value })} />
+                  <textarea className="w-full border-2 border-navy-200 px-3 py-2 text-sm focus:border-navy-600 focus:outline-none resize-y" rows={2} value={form.seoDesc} onChange={(e) => setForm({ ...form, seoDesc: e.target.value })} />
                 </div>
                 <div className="md:col-span-2">
                   <label className="text-xs font-medium text-navy-500 mb-1 block">OG Image URL</label>
-                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-blue-600 focus:outline-none" value={form.ogImage} onChange={(e) => setForm({ ...form, ogImage: e.target.value })} />
+                  <input className="w-full h-10 border-2 border-navy-200 px-3 text-sm focus:border-navy-600 focus:outline-none" value={form.ogImage} onChange={(e) => setForm({ ...form, ogImage: e.target.value })} />
                 </div>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function AdminBlog() {
                   </td>
                   <td className="p-4">
                     <div className="flex items-center gap-1">
-                      <button onClick={() => openEdit(post)} className="p-1.5 text-navy-400 hover:text-blue-600 transition-colors"><Pencil size={14} /></button>
+                      <button onClick={() => openEdit(post)} className="p-1.5 text-navy-400 hover:text-navy-600 transition-colors"><Pencil size={14} /></button>
                       <button onClick={() => handleDelete(post.id)} className="p-1.5 text-navy-400 hover:text-red-600 transition-colors"><Trash2 size={14} /></button>
                     </div>
                   </td>

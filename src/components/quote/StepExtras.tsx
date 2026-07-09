@@ -37,7 +37,7 @@ export function StepExtras() {
               onClick={() => toggleExtra(item.id)}
               className={`flex items-center justify-between p-5 border-2 text-left transition-all ${
                 isSelected
-                  ? "border-blue-600 bg-blue-50/50"
+                  ? "border-navy-600 bg-navy-50/50"
                   : "border-navy-200 hover:border-navy-400 bg-white"
               }`}
             >
@@ -45,7 +45,7 @@ export function StepExtras() {
                 <div
                   className={`w-6 h-6 border-2 flex items-center justify-center transition-colors ${
                     isSelected
-                      ? "bg-blue-600 border-blue-600"
+                      ? "bg-navy-600 border-navy-600"
                       : "border-navy-300"
                   }`}
                 >
@@ -53,7 +53,7 @@ export function StepExtras() {
                 </div>
                 <span className="font-medium text-navy-900">{item.label}</span>
               </div>
-              <span className="text-sm font-medium text-blue-600">
+              <span className="text-sm font-medium text-navy-600">
                 ${item.price}
               </span>
             </button>

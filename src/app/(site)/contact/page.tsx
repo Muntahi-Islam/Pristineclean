@@ -38,7 +38,7 @@ export default function ContactPage() {
     );
   }
 
-  const s = settings ?? { phone: "(555) 123-4567", supportEmail: "hello@pristineclean.com", address: "123 Luxury Lane, Suite 100, Beverly Hills, CA 90210", hours: "Mon - Sat: 7:00 AM - 8:00 PM" } as any;
+  const s = settings ?? { phone: "+1 713-259-3741", supportEmail: "toriscleaningservice@gmail.com", address: "15120 Lee Rd, Humble, TX 77395", hours: "Mon - Sat: 7:00 AM - 8:00 PM" } as any;
 
   return (
     <div className="section-padding bg-warm-50">
@@ -54,26 +54,26 @@ export default function ContactPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-navy-900/80 mb-1.5 block">Name *</label>
-                  <input name="name" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none" placeholder="Your name" />
+                  <input name="name" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none" placeholder="Your name" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-navy-900/80 mb-1.5 block">Email *</label>
-                  <input name="email" type="email" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none" placeholder="your@email.com" />
+                  <input name="email" type="email" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none" placeholder="your@email.com" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-navy-900/80 mb-1.5 block">Phone</label>
-                  <input name="phone" className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none" placeholder="(555) 123-4567" />
+                  <input name="phone" className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none" placeholder="(555) 123-4567" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-navy-900/80 mb-1.5 block">Subject *</label>
-                  <input name="subject" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none" placeholder="How can we help?" />
+                  <input name="subject" required className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none" placeholder="How can we help?" />
                 </div>
               </div>
               <div>
                 <label className="text-sm font-medium text-navy-900/80 mb-1.5 block">Message *</label>
-                <textarea name="message" required rows={6} className="flex w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-blue-600 focus:outline-none resize-y" placeholder="Tell us more about your inquiry..." />
+                <textarea name="message" required rows={6} className="flex w-full border-2 border-navy-200 bg-white px-4 py-3 text-navy-900 focus:border-navy-600 focus:outline-none resize-y" placeholder="Tell us more about your inquiry..." />
               </div>
               <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isLoading}>
                 {isLoading ? "Sending..." : "Send Message"}
@@ -86,28 +86,28 @@ export default function ContactPage() {
               <h3 className="text-lg font-semibold text-navy-900 mb-6">Contact Information</h3>
               <ul className="space-y-5">
                 <li className="flex items-start gap-4">
-                  <Phone size={20} className="text-blue-600 shrink-0 mt-0.5" />
+                  <Phone size={20} className="text-navy-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-navy-900">Phone</p>
-                    <a href={`tel:${s.phone}`} className="text-navy-500 hover:text-blue-600 transition-colors">{s.phone}</a>
+                    <a href={`tel:${s.phone}`} className="text-navy-500 hover:text-navy-600 transition-colors">{s.phone}</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <Mail size={20} className="text-blue-600 shrink-0 mt-0.5" />
+                  <Mail size={20} className="text-navy-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-navy-900">Email</p>
-                    <a href={`mailto:${s.supportEmail}`} className="text-navy-500 hover:text-blue-600 transition-colors">{s.supportEmail}</a>
+                    <a href={`mailto:${s.supportEmail}`} className="text-navy-500 hover:text-navy-600 transition-colors">{s.supportEmail}</a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <MapPin size={20} className="text-blue-600 shrink-0 mt-0.5" />
+                  <MapPin size={20} className="text-navy-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-navy-900">Address</p>
                     <p className="text-navy-500">{s.address}</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <Clock size={20} className="text-blue-600 shrink-0 mt-0.5" />
+                  <Clock size={20} className="text-navy-600 shrink-0 mt-0.5" />
                   <div>
                     <p className="font-medium text-navy-900">Hours</p>
                     <p className="text-navy-500">{s.hours}</p>

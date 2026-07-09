@@ -30,8 +30,8 @@ export function StepAddress() {
           </label>
           <input
             {...register("street")}
-            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
-            placeholder="123 Luxury Lane"
+            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
+            placeholder="123 Main St"
           />
         </div>
 
@@ -42,8 +42,8 @@ export function StepAddress() {
             </label>
             <input
               {...register("city")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
-              placeholder="Beverly Hills"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
+              placeholder="Houston"
             />
           </div>
           <div>
@@ -52,7 +52,7 @@ export function StepAddress() {
             </label>
             <select
               {...register("state")}
-              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
+              className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
             >
               <option value="">Select state</option>
               {usStates.map((s) => (
@@ -70,8 +70,8 @@ export function StepAddress() {
           </label>
           <input
             {...register("zipCode")}
-            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-blue-600 focus:outline-none"
-            placeholder="90210"
+            className="flex h-12 w-full border-2 border-navy-200 bg-white px-4 text-navy-900 focus:border-navy-600 focus:outline-none"
+            placeholder="77395"
           />
         </div>
       </div>

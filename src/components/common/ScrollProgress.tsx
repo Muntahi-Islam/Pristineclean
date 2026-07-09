@@ -23,7 +23,7 @@ export function ScrollProgress() {
     <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
       <div
         ref={ref}
-        className="h-full bg-blue-600 origin-left"
+        className="h-full bg-navy-600 origin-left"
         style={{ transform: "scaleX(0)" }}
       />
     </div>

@@ -31,8 +31,8 @@ export function Navbar() {
           href="/"
           className="relative z-10 text-xl font-bold tracking-tight text-navy-900"
         >
-          <span className="font-serif text-2xl font-semibold">Pristine</span>
-          <span className="text-blue-600">Clean</span>
+          <span className="font-serif text-2xl font-semibold">Tori&apos;s</span>
+          <span className="text-navy-600"> Cleaning</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
@@ -40,7 +40,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-navy-700 transition-colors hover:text-blue-600"
+              className="text-sm font-medium text-navy-700 transition-colors hover:text-navy-600"
             >
               {item.label}
             </Link>
@@ -76,7 +76,7 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block py-3 text-base font-medium text-navy-700 transition-colors hover:text-blue-600"
+                className="block py-3 text-base font-medium text-navy-700 transition-colors hover:text-navy-600"
               >
                 {item.label}
               </Link>

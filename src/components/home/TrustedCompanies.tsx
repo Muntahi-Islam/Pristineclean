@@ -3,12 +3,12 @@
 import { AnimatedSection } from "@/components/common/AnimatedSection";
 
 const companies = [
-  "LUXURY LIVING",
-  "PREMIER REALTY",
-  "ELITE HOMES",
-  "CORPORATE SUITES",
-  "BOUTIQUE HOTELS",
-  "DESIGN STUDIO",
+  "HOUSTON HOMES",
+  "GULF COAST REALTY",
+  "SPACE CITY",
+  "HOUSTON OFFICES",
+  "TEXAS LIVING",
+  "HTOWN SUITES",
 ];
 
 export function TrustedCompanies() {

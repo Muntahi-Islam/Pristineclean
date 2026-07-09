@@ -16,7 +16,7 @@ const SelectTrigger = forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-12 w-full items-center justify-between border-2 border-navy-200 bg-transparent px-4 text-navy-900 transition-all hover:border-navy-300 focus-visible:border-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600/20 disabled:cursor-not-allowed disabled:opacity-50",
+      "flex h-12 w-full items-center justify-between border-2 border-navy-200 bg-transparent px-4 text-navy-900 transition-all hover:border-navy-300 focus-visible:border-navy-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600/20 disabled:cursor-not-allowed disabled:opacity-50",
       className
     )}
     {...props}
@@ -64,7 +64,7 @@ const SelectItem = forwardRef<
   >
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
     <SelectPrimitive.ItemIndicator className="absolute right-2">
-      <Check className="h-4 w-4 text-blue-600" />
+      <Check className="h-4 w-4 text-navy-600" />
     </SelectPrimitive.ItemIndicator>
   </SelectPrimitive.Item>
 ));

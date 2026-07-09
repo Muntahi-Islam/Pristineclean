@@ -8,7 +8,7 @@ const variants = {
   default:
     "bg-navy-900 text-white hover:bg-navy-800 shadow-lg shadow-navy-900/20",
   primary:
-    "bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-600/25",
+    "bg-navy-600 text-white hover:bg-navy-500 shadow-lg shadow-navy-600/25",
   ghost: "text-navy-900 hover:bg-navy-100/50",
   outline:
     "border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white",
@@ -35,7 +35,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         className={cn(
-          "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
           variants[variant],
           sizes[size],
           className

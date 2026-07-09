@@ -1,38 +1,48 @@
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "../src/lib/prisma";
+import { hashPassword } from "@better-auth/utils/password";
 
 async function main() {
-  const email = "admin@pristineclean.com";
-  const password = "admin123";
+  const email = "admintoricleaning@gmail.com";
+  const password = "admin@123";
   const name = "Admin";
 
-  // Check if user already exists in Better Auth
+  // Remove existing user if present
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
-    console.log("Admin user already exists:", email);
-    return;
+    await prisma.account.deleteMany({ where: { userId: existing.id } });
+    await prisma.session.deleteMany({ where: { userId: existing.id } });
+    await prisma.user.delete({ where: { email } });
+    console.log(`Removed old user ${email}`);
   }
 
-  // Better Auth handles password hashing via its signup API.
-  // For a direct seed, we need to use the Better Auth API.
-  // Instead, print instructions.
-  console.log(`
-Admin user not found. To create one, start the dev server and visit:
+  const hashedPassword = await hashPassword(password);
 
-  http://localhost:3000/admin/login
+  const user = await prisma.user.create({
+    data: {
+      email,
+      name,
+      password: hashedPassword,
+      role: "ADMIN",
+      emailVerified: true,
+    },
+  });
 
-Then sign up with:
-  Email: ${email}
-  Password: ${password}
-  Name: ${name}
+  // Create a matching credential account for Better Auth
+  await prisma.account.create({
+    data: {
+      userId: user.id,
+      accountId: user.id,
+      providerId: "credential",
+      password: hashedPassword,
+    },
+  });
 
-After signup, run this to promote the user to admin:
-
-  npx tsx scripts/promote-admin.ts ${email}
-`);
+  console.log(`Admin created: ${email} / ${password}`);
 }
 
 main()
-  .catch(console.error)
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
   .finally(() => prisma.$disconnect());

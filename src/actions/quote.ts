@@ -74,9 +74,9 @@ export async function submitQuote(data: QuoteInput) {
     if (process.env.RESEND_API_KEY) {
       await Promise.allSettled([
         resend.emails.send({
-          from: `PristineClean <noreply@${process.env.RESEND_DOMAIN ?? "pristineclean.com"}>`,
+          from: `Tori's Cleaning Service <noreply@${process.env.RESEND_DOMAIN ?? "toriscleaningservice.com"}>`,
           to: customerEmail,
-          subject: "Quote Request Received - PristineClean",
+          subject: "Quote Request Received - Tori's Cleaning Service",
           react: QuoteConfirmationEmail({
             requestId: quote.requestId,
             customerName,
@@ -86,7 +86,7 @@ export async function submitQuote(data: QuoteInput) {
           }),
         }),
         resend.emails.send({
-          from: `PristineClean <noreply@${process.env.RESEND_DOMAIN ?? "pristineclean.com"}>`,
+          from: `Tori's Cleaning Service <noreply@${process.env.RESEND_DOMAIN ?? "toriscleaningservice.com"}>`,
           to: COMPANY.email,
           subject: `New Quote Request - ${customerName}`,
           react: QuoteNotificationEmail({
