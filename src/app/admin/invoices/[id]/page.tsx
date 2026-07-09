@@ -47,7 +47,47 @@ export default function InvoiceDetail() {
     load();
   }, [params.id]);
 
-  const handlePrint = () => window.print();
+  const handlePrint = () => {
+    const printContent = printRef.current;
+    if (!printContent) return;
+
+    const printWindow = window.open("", "_blank");
+    if (!printWindow) return;
+
+    const styles = Array.from(document.querySelectorAll("link[rel=stylesheet], style"))
+      .map((el) => el.outerHTML)
+      .join("\n");
+
+    printWindow.document.write(`
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Invoice ${invoice?.invoiceNumber ?? ""}</title>
+          ${styles}
+          <style>
+            body {
+              background: white !important;
+              margin: 0;
+              padding: 0;
+              -webkit-print-color-adjust: exact;
+              print-color-adjust: exact;
+            }
+            @page { margin: 0; size: letter; }
+          </style>
+        </head>
+        <body>
+          ${printContent.outerHTML}
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+
+    setTimeout(() => {
+      printWindow.focus();
+      printWindow.print();
+      printWindow.onafterprint = () => printWindow.close();
+    }, 500);
+  };
 
   if (loading) return <div className="text-center py-12 text-navy-500">Loading...</div>;
   if (!invoice) return <div className="text-center py-12 text-navy-500">Invoice not found.</div>;
@@ -131,13 +171,28 @@ export default function InvoiceDetail() {
         </div>
       </div>
 
-      <style jsx global>{`
-        @media print {
-          .no-print { display: none !important; }
-          body { background: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-          #invoice-print { border: none !important; box-shadow: none !important; }
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `@media print {
+  .no-print { display: none !important; }
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    margin: 0;
+    padding: 0;
+  }
+  #invoice-print {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    padding: 0.75in !important;
+  }
+  @page {
+    margin: 0;
+    size: letter;
+  }
+}`
+      }} />
     </div>
   );
 }
