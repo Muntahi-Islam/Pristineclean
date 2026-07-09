@@ -1,0 +1,205 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String?
+  email     String   @unique
+  password  String?
+  role      String   @default("CUSTOMER")
+  image     String?
+  emailVerified Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accounts  Account[]
+  sessions  Session[]
+  quotes    Quote[]
+  contacts  Contact[]
+}
+
+model Account {
+  id                   String   @id @default(cuid())
+  userId               String
+  accountId            String
+  providerId           String
+  accessToken          String?
+  refreshToken         String?
+  idToken              String?
+  accessTokenExpiresAt DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                String?
+  password             String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  ipAddress String?
+  userAgent String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Quote {
+  id             String   @id @default(cuid())
+  requestId      String   @unique @default(cuid())
+  service        String
+  propertyType   String
+  bedrooms       Int?
+  bathrooms      Int?
+  squareFootage  Int?
+  frequency      String
+  preferredDate  DateTime?
+  preferredTime  String?
+  street         String?
+  city           String?
+  state          String?
+  zipCode        String?
+  extras         String[]
+  images         String[]
+  customerName   String
+  customerEmail  String
+  customerPhone  String
+  company        String?
+  notes          String?
+  status         String   @default("PENDING")
+  internalNotes  String?
+  estimatedValue Decimal? @db.Decimal(10, 2)
+  userId         String?
+  user           User?    @relation(fields: [userId], references: [id])
+  invoices       Invoice[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  read      Boolean  @default(false)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  subtitle    String?
+  description String
+  icon        String?
+  image       String?
+  price       Decimal? @db.Decimal(10, 2)
+  priceLabel  String?
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model GalleryItem {
+  id          String   @id @default(cuid())
+  title       String?
+  description String?
+  image       String
+  category    String   @default("general")
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  published   Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?
+  company   String?
+  avatar    String?
+  content   String
+  rating    Int      @default(5)
+  videoUrl  String?
+  featured  Boolean  @default(false)
+  published Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model FAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  category  String   @default("general")
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model BlogPost {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  excerpt      String?
+  content      String
+  image        String?
+  category     String   @default("general")
+  author       String   @default("Admin")
+  readingTime  Int?
+  published    Boolean  @default(false)
+  featured     Boolean  @default(false)
+  seoTitle     String?
+  seoDesc      String?
+  canonical    String?
+  ogImage      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Invoice {
+  id              String   @id @default(cuid())
+  invoiceNumber   String   @unique
+  quoteId         String
+  quote           Quote    @relation(fields: [quoteId], references: [id])
+  customerName    String
+  customerEmail   String
+  customerPhone   String?
+  customerAddress String?
+  service         String
+  amount          Decimal  @db.Decimal(10, 2)
+  tax             Decimal  @db.Decimal(10, 2) @default(0)
+  total           Decimal  @db.Decimal(10, 2)
+  status          String   @default("PAID")
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model SiteSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
