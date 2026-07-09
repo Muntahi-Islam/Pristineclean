@@ -98,7 +98,7 @@ export async function createStandaloneInvoice(data: {
         total,
         status: "PAID",
         notes: data.notes || null,
-        quoteId: null,
+        quote: undefined,
       },
     });
 
